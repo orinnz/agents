@@ -12,7 +12,7 @@ export default defineConfig({
     name: "react",
     // Retry flaky browser/Playwright runs before failing.
     retry: 3,
-    include: [path.join(testsDir, "**/*.test.{ts,tsx}")],
+    include: [path.join(testsDir, "**/*.test.{ts,tsx}").replaceAll("\\", "/")],
     browser: {
       enabled: true,
       instances: [
